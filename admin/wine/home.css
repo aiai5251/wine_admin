@@ -1,0 +1,23 @@
+.left {
+	float: left;
+	position: absolute;
+	width: 110px;
+	background-color: white;
+	font-size: 14px;
+}
+
+.clicked {
+	color: cornflowerblue;
+}
+
+.right {
+	position: absolute; 
+	left: 110px;
+	right: 0px;
+	top: 44px;
+	bottom: 0px;
+}
+
+.right iframe {
+	border-style: none;
+}

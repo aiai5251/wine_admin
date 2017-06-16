@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="login">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+		<title></title>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">东方酒业后台管理系统</h1>
+		</header>
+		<div class="mui-content" style="padding-left: 30%; padding-right: 30%;">
+			<p style="padding-top: 20%;"></p>
+			<form class="mui-input-group">
+				<div class="mui-input-row">
+					<label>手机号</label>
+					<input type="text" id="tel" placeholder="11位手机号">
+				</div>
+				<div class="mui-input-row">
+					<label>密码</label>
+					<input type="password" id="password" class="mui-input-password">
+				</div>
+			</form>
+			<p></p>
+			<button type="button" class="mui-btn mui-btn-primary mui-btn-block" ng-click="login()">登录</button>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/mui.min.js" ></script>
+	<script type="text/javascript" src="login.js" ></script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="home">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+		<link rel="stylesheet" href="home.css" />
+		<title></title>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">系统管理</h1>
+		</header>
+		<div class="mui-content">
+			<div class="left">
+				<ul class="mui-table-view" ng-repeat="row in titleList">
+					<li class="mui-table-view-cell mui-collapse" ng-show="row.list.length > 0">
+						<a class="mui-navigate-right" ng-show="row.click == 1" class="clicked" ng-bind="row.title"></a>
+						<a class="mui-navigate-right" ng-show="row.click == 0" ng-bind="row.title"></a>
+						<div class="mui-collapse-content" style="background-color: #fafafa;">
+							<div ng-repeat="listRow in row.list" ng-click="choose(listRow)">
+								<span class="clicked" ng-bind="listRow.title" ng-show="listRow.click == 1"></span>
+								<span ng-bind="listRow.title" ng-show="listRow.click == 0"></span>
+							</div>
+						</div>
+					</li>
+					<li class="mui-table-view-cell" ng-show="row.list.length == 0"  ng-click="choose(row)">
+						<span class="clicked" ng-bind="row.title" ng-show="row.click == 1"></span>
+						<span ng-bind="row.title" ng-show="row.click == 0"></span>
+					</li>
+				</ul>
+			</div>
+			<div class="right">
+				<iframe ng-src="{{currentHref}}" width="100%" height="100%"></iframe>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="../js/global.js"></script>
+	<script type="text/javascript" src="../js/mui.min.js"></script>
+	<script type="text/javascript" src="home.js"></script>
+
+</html>
