@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="banner_add">
+
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+		<script type="text/javascript" src="../js/global.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<form id="form_add" method="post" enctype="multipart/form-data">
+			<table>
+				<tbody>
+					<tr>
+						<td>title</td>
+						<td><textarea id="title" name="title" rows="5" cols="80"></textarea></td>
+					</tr>
+					<tr>
+						<td>url</td>
+						<td><textarea id="url" name="url" rows="1" cols="80"></textarea></td>
+					</tr>
+					<tr>
+						<td>image<br/></td>
+						<td id="images">
+							<p><img width="100px" height="100px" /><input type="file" id="file" name="file" onchange="GetImage(this);" /></p>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="add" ng-click="add()" /></td>
+						<td>{{json.id}}&nbsp;&nbsp;&nbsp;{{json.imgurl}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+
+		<script type="text/javascript">
+			function GetImage(_this) {
+				_this.previousSibling.src = window.URL.createObjectURL(_this.files[0]);
+			}
+		</script>
+	</body>
+	<script type="text/javascript" src="banner_add.js"></script>
+
+</html>
