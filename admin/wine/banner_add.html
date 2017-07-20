@@ -3,43 +3,36 @@
 
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/mui.min.css" />
 		<script type="text/javascript" src="../js/angular.min.js"></script>
 		<script type="text/javascript" src="../js/global.js"></script>
-		<title></title>
+		<title>上传banner图片</title>
 	</head>
 
 	<body>
-		<form id="form_add" method="post" enctype="multipart/form-data">
-			<table>
-				<tbody>
-					<tr>
-						<td>title</td>
-						<td><textarea id="title" name="title" rows="5" cols="80"></textarea></td>
-					</tr>
-					<tr>
-						<td>url</td>
-						<td><textarea id="url" name="url" rows="1" cols="80"></textarea></td>
-					</tr>
-					<tr>
-						<td>image<br/></td>
-						<td id="images">
-							<p><img width="100px" height="100px" /><input type="file" id="file" name="file" onchange="GetImage(this);" /></p>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="submit" value="add" ng-click="add()" /></td>
-						<td>{{json.id}}&nbsp;&nbsp;&nbsp;{{json.imgurl}}</td>
-					</tr>
-				</tbody>
-			</table>
+		<div style="font-size: 15px; padding: 15px;">选择Banner图片上传，文件大小不要超过2M</div>
+		<form id="form_add" method="post" enctype="multipart/form-data" style="padding: 15px;">
+			<div>图片title</div>
+			<textarea id="title" name="title" rows="1"></textarea>
+			<div>图片url</div>
+			<textarea id="url" name="url" rows="1"></textarea>
+			<div>选取上传图片</div>
+			<div>
+				<img id="images" width="100px" height="100px" />
+				<input type="file" id="file" name="file" onchange="GetImage(this);" />
+			</div>
+			<div style="padding-top: 10px;">
+				<input type="submit" value="上传" ng-click="add()" />
+				<div>{{json.id}}&nbsp;&nbsp;&nbsp;{{json.imgurl}}</div>
+			</div>
 		</form>
 
 		<script type="text/javascript">
 			function GetImage(_this) {
 				_this.previousSibling.src = window.URL.createObjectURL(_this.files[0]);
+				document.getElementById("images").src = _this.previousSibling.src;
 			}
 		</script>
 	</body>
 	<script type="text/javascript" src="banner_add.js"></script>
-
 </html>
