@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="admin" ng-controller="product">
 	<head>
 		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
 		<title>商品列表</title>
 	</head>
 	<body>
-		product
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>op</td>
+					<td>id</td>
+					<td>title</td>
+					<td>submessage</td>
+					<td>price</td>
+					<td>vloume</td>
+					<td>point</td>
+					<td>image</td>
+					<td>description_image</td>
+					<td>description</td>
+					<td>origprice</td>
+					<td>freight_money</td>
+					<td>count</td>
+					<td>sale</td>
+					
+				</tr>
+			</tbody>
+			<tbody>
+				<tr ng-repeat="row in json" style="height: 50px;">
+					<td>
+						<a href="product_modify.html?id={{row.guid}}" target="_blank">modify</a>
+					</td>
+					<td>{{row.id}}</td>
+					<td>{{row.title}}</td>
+					<td>{{row.submessage}}</td>
+					<td>{{row.price}}</td>
+					<td>{{row.volume}}</td>
+					<td>{{row.point}}</td>
+					<td><img ng-src="{{row.image}}" width="100px" height="100" /></td>
+					<td><img ng-src="{{row.description_image}}" width="100px" height="100" /></td>
+					<td>{{row.description}}</td>
+					<td>{{row.origprice}}</td>
+					<td>{{row.freight_money}}</td>
+					<td>{{row.count}}</td>
+					<td>{{row.sales}}</td>
+				</tr>
+			</tbody>
+		</table>
 	</body>
+	<script type="text/javascript" src="../js/global.js" ></script>
+	<script type="text/javascript" src="product.js" ></script>
 </html>

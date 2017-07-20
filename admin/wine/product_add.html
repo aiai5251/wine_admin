@@ -28,12 +28,12 @@
 					</tr>
 					<tr>
 						<td>price</td>
-						<td><textarea id="price" name="price" rows="1" cols="80"></textarea></td>
+						<td><textarea id="price" name="price" rows="1" cols="80">0</textarea></td>
 					</tr>
 					<tr>
 						<td>description_images<br/><input type="button" value="add" onclick="AddDescriptionImage();" /><input type="button" value="remove" onclick="RemoveDescriptionImage();" /></td>
 						<td id="description_images">
-							<p><img width="100px" height="100px" /><input type="file" id="file" name="file" onchange="GetImage(this);" /></p>
+							<p><img width="100px" height="100px" /><input type="file" id="descriptionFile" name="descriptionFile" onchange="GetImage(this);" /></p>
 						</td>
 					</tr>
 					<tr>
@@ -46,7 +46,7 @@
 					</tr>
 					<tr>
 						<td>origprice</td>
-						<td><textarea id="origprice" name="origprice" rows="5" cols="80"></textarea></td>
+						<td><textarea id="origprice" name="origprice" rows="5" cols="80">0</textarea></td>
 					</tr>
 					<tr>
 						<td>count</td>
@@ -62,7 +62,7 @@
 					</tr>
 					<tr>
 						<td><input type="submit" value="add" ng-click="add()" /></td>
-						<td>{{json.message}}&nbsp;&nbsp;&nbsp;{{json.url}}</td>
+						<td>{{json.status}}&nbsp;&nbsp;&nbsp;{{json.infoMsg}}</td>
 					</tr>
 				</tbody>
 			</table>
@@ -90,7 +90,7 @@
 
 			function AddDescriptionImage() {
 				var p = document.createElement("p");
-				p.innerHTML = "<img width=\"100px\" height=\"100px\" /><input type=\"file\" id=\"file\" name=\"file\" onchange=\"GetImage(this);\"/>";
+				p.innerHTML = "<img width=\"100px\" height=\"100px\" /><input type=\"file\" id=\"descriptionFile\" name=\"descriptionFile\" onchange=\"GetImage(this);\"/>";
 				document.getElementById("description_images").appendChild(p);
 			}
 

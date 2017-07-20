@@ -4,14 +4,14 @@ app.controller('product_add', function($scope, $http) {
 		var formdata = new FormData(document.getElementById("form_add"));
 		$http({
 			method: 'POST',
-			url: getHeadUrl() + "admin_product_add.a",
+			url: getHeadUrl() + "product_add.a",
 			data: formdata,
 			headers: {
 				'Content-Type': undefined
 			},
 			transformRequest: angular.identity
 		}).success(function(response) {
-			$scope.json = response.body;
+			$scope.json = response;
 //			document.getElementById("qrcode").innerHTML = "";
 //			jQuery('#qrcode').qrcode({
 //				width:280,
