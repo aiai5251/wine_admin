@@ -1,5 +1,5 @@
 
-table.simple {
+table.com-sim {
 	font-family: verdana, arial, sans-serif;
 	font-size: 11px;
 	color: #333333;
@@ -8,7 +8,7 @@ table.simple {
 	border-collapse: collapse;
 }
 
-table.simple th {
+table.com-sim th {
 	border-width: 1px;
 	padding: 8px;
 	border-style: solid;
@@ -16,7 +16,7 @@ table.simple th {
 	background-color: #dedede;
 }
 
-table.simple td {
+table.com-sim td {
 	border-width: 1px;
 	padding: 8px;
 	border-style: solid;
