@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="banner_modify">
+
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+		<script type="text/javascript" src="../js/global.js"></script>
+		<title>上传banner图片</title>
+	</head>
+
+	<body>
+		<div style="font-size: 15px; padding: 15px;">选择Banner图片上传，文件大小不要超过2M</div>
+		<form id="form_modify" method="post" enctype="multipart/form-data" style="padding: 15px;">
+			<div>bannerId</div>
+			<textarea id="id" name="id" readonly="readonly" rows="1">{{row.id}}</textarea>
+			<div>跳转标题title</div>
+			<textarea id="title" name="title" rows="1">{{row.title}}</textarea>
+			<div>跳转url</div>
+			<textarea id="url" name="url" rows="1"></textarea>
+			<div>选取上传图片</div>
+			<div>
+				<img id="images" width="100px" height="100px" />
+				<input type="file" id="file" name="file" onchange="GetImage(this);" />
+			</div>
+			<div style="padding-top: 10px;">
+				<input type="submit" value="上传" ng-click="modify()" />
+				<div>{{json.id}}&nbsp;&nbsp;&nbsp;{{json.imgurl}}</div>
+			</div>
+		</form>
+
+		<script type="text/javascript">
+			function GetImage(_this) {
+				_this.previousSibling.src = window.URL.createObjectURL(_this.files[0]);
+				document.getElementById("images").src = _this.previousSibling.src;
+			}
+		</script>
+	</body>
+	<script type="text/javascript" src="banner_modify.js"></script>
+</html>

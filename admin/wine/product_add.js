@@ -12,12 +12,6 @@ app.controller('product_add', function($scope, $http) {
 			transformRequest: angular.identity
 		}).success(function(response) {
 			$scope.json = response;
-//			document.getElementById("qrcode").innerHTML = "";
-//			jQuery('#qrcode').qrcode({
-//				width:280,
-//				height:280,
-//				text: $scope.json.url
-//			});
 		});
 	}
 });

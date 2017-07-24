@@ -1,10 +1,65 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="admin" ng-controller="order">
 	<head>
 		<meta charset="UTF-8">
-		<title>订单列表</title>
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+		<title>用户订单列表</title>
 	</head>
 	<body>
-		order
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>op</td>
+					<td>id</td>
+					<td>order_num</td>
+					<td>product</td>
+					<td>address</td>
+					<td>status</td>
+					<td>memo</td>
+					<td>coupon</td>
+					<td>pay</td>
+					<td>create_modify</td>
+					<td>modify_modify</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr ng-show="json.length > 0" ng-repeat="row in json" style="height: 50px;">
+					<td>
+						<a href="" target="_blank">modify</a>
+					</td>
+					<td>{{row.id}}</td>
+					<td>{{row.order_num}}</td>
+					<td><div ng-repeat="orderDetail in row.orderDetails">
+						<label>{{orderDetail.productInfo.title}}-----{{orderDetail.productInfo.price}} * {{orderDetail.count}}</label>
+					</div></td>
+					<td>名字：{{row.addressInfo.name}}，地址：{{row.addressInfo.address}}，电话：{{row.addressInfo.tel}}</td>
+					<td>{{row.status}}</td>
+					<td>{{row.memo}}</td>
+					<td>满{{row.couponInfo.max_price}}减{{row.couponInfo.price}}</td>
+					<td>{{row.pay}}</td>
+					<td>{{row.create_modify}}</td>
+					<td>{{row.modify_modify}}</td>
+				</tr>
+				<tr ng-show="json.length == 0" style="height: 50px;">
+					<td>
+						<a href="" target="_blank">modify</a>
+					</td>
+					<td>{{row.id}}</td>
+					<td>{{row.order_num}}</td>
+					<td><div ng-repeat="orderDetail in row.orderDetails">
+						<label>{{orderDetail.productInfo.title}}-----{{orderDetail.productInfo.price}} * {{orderDetail.count}}</label>
+					</div></td>
+					<td>名字：{{row.addressInfo.name}}，地址：{{row.addressInfo.address}}，电话：{{row.addressInfo.tel}}</td>
+					<td>{{row.status}}</td>
+					<td>{{row.memo}}</td>
+					<td>满{{row.couponInfo.max_price}}减{{row.couponInfo.price}}</td>
+					<td>{{row.pay}}</td>
+					<td>{{row.create_modify}}</td>
+					<td>{{row.modify_modify}}</td>
+				</tr>
+			</tbody>
+		</table>
 	</body>
+	<script type="text/javascript" src="../js/global.js" ></script>
+	<script type="text/javascript" src="order.js" ></script>
 </html>

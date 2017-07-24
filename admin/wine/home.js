@@ -29,6 +29,11 @@ app.controller("home", function($scope, $http, $sce) {
 		"src": "order.html",
 		"click": 0,
 		"list": []
+	}, {
+		"title": "首页banner",
+		"src": "banner.html",
+		"click": 0,
+		"list": []
 	}];
 
 	$scope.currentHref = $sce.trustAsResourceUrl($scope.titleList[0].src);

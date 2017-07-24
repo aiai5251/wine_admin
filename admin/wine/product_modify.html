@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="product_modify">
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+		<title>商品列表</title>
+	</head>
+	<body>
+		<form id="form_modify" method="post" enctype="multipart/form-data">
+			<table class="com-sim">
+				<tbody>
+					<tr><td>id</td>
+						<td><textarea id="id" name="id" rows="5" cols="80" readonly="readonly">{{json.id}}</textarea></td>
+					</tr>
+					<tr>
+						<td>title</td>
+						<td><textarea id="title" name="title" rows="5" cols="80">{{json.title}}</textarea></td>
+					</tr>
+					<tr>
+						<td>submessage</td>
+						<td><textarea id="submessage" name="submessage" rows="1" cols="80">{{json.submessage}}</textarea></td>
+					</tr>
+					<tr>
+						<td>image<br/><input type="button" value="add" onclick="AddImage();" /><input type="button" value="remove" onclick="RemoveImage();" /></td>
+						<td id="images">
+							<p ng-repeat="row in json.images"><img ng-src="{{row.url}}" width="100px" height="100px" /><input type="file" id="file" name="file" onchange="GetImage(this);" /></p>
+						</td>
+					</tr>
+					<tr>
+						<td>price</td>
+						<td><textarea id="price" name="price" rows="1" cols="80">{{json.price}}</textarea></td>
+					</tr>
+					<tr>
+						<td>description_images<br/><input type="button" value="add" onclick="AddDescriptionImage();" /><input type="button" value="remove" onclick="RemoveDescriptionImage();" /></td>
+						<td id="description_images">
+							<p ng-repeat="row in json.desc_images"><img ng-src="{{row.url}}" width="100px" height="100px" /><input type="file" id="descriptionFile" name="descriptionFile" onchange="GetImage(this);" /></p>
+						</td>
+					</tr>
+					<tr>
+						<td>volume</td>
+						<td><textarea id="volume" name="volume" rows="5" cols="80">{{json.volume}}</textarea></td>
+					</tr>
+					<tr>
+						<td>description</td>
+						<td><textarea id="description" name="description" rows="5" cols="80">{{json.description}}</textarea></td>
+					</tr>
+					<tr>
+						<td>origprice</td>
+						<td><textarea id="origprice" name="origprice" rows="5" cols="80">{{json.origprice}}</textarea></td>
+					</tr>
+					<tr>
+						<td>count</td>
+						<td><textarea id="count" name="count" rows="5" cols="80">{{json.count}}</textarea></td>
+					</tr>
+					<tr>
+						<td>freight_money</td>
+						<td><textarea id="freight_money" name="freight_money" rows="5" cols="80">{{json.freight_money}}</textarea></td>
+					</tr>
+					<tr>
+						<td>point</td>
+						<td><textarea id="point" name="point" rows="5" cols="80">{{json.point}}</textarea></td>
+					</tr>
+					<tr>
+						<td>invalid</td>
+						<td><textarea id="invalid" name="invalid" rows="1" cols="80">{{json.invalid}}</textarea></td>
+					</tr>
+					<tr>
+						<td><input type="submit" value="modify" ng-click="modify()" /></td>
+						<td>{{result.status}}&nbsp;&nbsp;&nbsp;{{result.infoMsg}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+
+		<script type="text/javascript">
+			function GetImage(_this) {
+				_this.previousSibling.src = window.URL.createObjectURL(_this.files[0]);
+			}
+
+			function AddImage() {
+				var p = document.createElement("p");
+				p.innerHTML = "<img width=\"100px\" height=\"100px\" /><input type=\"file\" id=\"file\" name=\"file\" onchange=\"GetImage(this);\"/>";
+				document.getElementById("images").appendChild(p);
+			}
+
+			function RemoveImage() {
+				var images = document.getElementById("images");
+				var p = images.getElementsByTagName("p");
+				if(p.length > 1)
+					images.removeChild(p[p.length - 1]);
+				else
+					alert("Value cannot be null");
+			}
+
+			function AddDescriptionImage() {
+				var p = document.createElement("p");
+				p.innerHTML = "<img width=\"100px\" height=\"100px\" /><input type=\"file\" id=\"descriptionFile\" name=\"descriptionFile\" onchange=\"GetImage(this);\"/>";
+				document.getElementById("description_images").appendChild(p);
+			}
+
+			function RemoveDescriptionImage() {
+				var images = document.getElementById("description_images");
+				var p = images.getElementsByTagName("p");
+				if(p.length > 1)
+					images.removeChild(p[p.length - 1]);
+				else
+					alert("Value cannot be null");
+			}
+		</script>
+	</body>
+	<script type="text/javascript" src="../js/global.js" ></script>
+	<script type="text/javascript" src="product_modify.js" ></script>
+</html>

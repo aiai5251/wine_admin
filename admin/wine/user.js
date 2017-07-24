@@ -1,4 +1,6 @@
 var app = angular.module("admin", []);
 app.controller("user", function($scope, $http) {
-	$scope.json = [1,2,3];
+	$http.get(getHeadUrl() + "user").success(function(response) {
+		$scope.json = response.data;
+	});
 });

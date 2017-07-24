@@ -1,6 +1,6 @@
 function getHeadUrl() {
-	return "http://localhost:9090/wine/";
-//	return "http://192.168.1.10:8080/Student_maven/";
+//	return "http://localhost:9090/wine/";
+	return "http://main-zha.com/chimu/wine/";
 }
 
 // Request
