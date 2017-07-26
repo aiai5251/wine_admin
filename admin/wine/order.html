@@ -18,8 +18,8 @@
 					<td>memo</td>
 					<td>coupon</td>
 					<td>pay</td>
-					<td>create_modify</td>
-					<td>modify_modify</td>
+					<td>create_time</td>
+					<td>modify_time</td>
 				</tr>
 			</tbody>
 			<tbody>
@@ -37,10 +37,10 @@
 					<td>{{row.memo}}</td>
 					<td>满{{row.couponInfo.max_price}}减{{row.couponInfo.price}}</td>
 					<td>{{row.pay}}</td>
-					<td>{{row.create_modify}}</td>
-					<td>{{row.modify_modify}}</td>
+					<td>{{row.create_time}}</td>
+					<td>{{row.modify_time}}</td>
 				</tr>
-				<tr ng-show="json.length == 0" style="height: 50px;">
+				<tr ng-show="json.length == 0 && row != null" style="height: 50px;">
 					<td>
 						<a href="" target="_blank">modify</a>
 					</td>

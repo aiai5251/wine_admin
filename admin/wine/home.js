@@ -34,6 +34,11 @@ app.controller("home", function($scope, $http, $sce) {
 		"src": "banner.html",
 		"click": 0,
 		"list": []
+	}, {
+		"title": "优惠券",
+		"src": "coupon.html",
+		"click": 0,
+		"list": []
 	}];
 
 	$scope.currentHref = $sce.trustAsResourceUrl($scope.titleList[0].src);

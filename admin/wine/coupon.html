@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="coupon">
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+		<title>商品列表</title>
+	</head>
+	<body>
+		<a href="coupon_add.html" target="_blank">add</a>
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>op</td>
+					<td>id</td>
+					<td>price</td>
+					<td>max_price</td>
+					<td>build_time</td>
+					<td>end_time</td>
+					<td>pid</td>
+					<td>uid</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr ng-repeat="row in json" style="height: 50px;">
+					<td>
+						<a href="coupon_modify.html?id={{row.id}}" target="_blank">modify</a>
+						<input type="submit" value="删除" ng-click="deleteRow(row)" />
+					</td>
+					<td>{{row.id}}</td>
+					<td>{{row.price}}</td>
+					<td>{{row.max_price}}</td>
+					<td>{{row.build_time}}</td>
+					<td>{{row.end_time}}</td>
+					<td>{{row.pid}}</td>
+					<td>{{row.uid}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	<script type="text/javascript" src="../js/global.js" ></script>
+	<script type="text/javascript" src="coupon.js" ></script>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="coupon_modify">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<title>上传banner图片</title>
+	</head>
+
+	<body>
+		<div style="font-size: 15px; padding: 15px;"></div>
+		<form id="form_modify" method="post" enctype="multipart/form-data" style="padding: 15px;">
+			<textarea id="id" name="id" rows="1" readonly="readonly">{{coupon.id}}</textarea>
+			<div>必填：整数优惠券价格</div>
+			<textarea id="price" name="price" rows="1">{{coupon.price}}</textarea>
+			<div>必填：满多少减</div>
+			<textarea id="max_price" name="max_price" rows="1">{{coupon.max_price}}</textarea>
+			<div>选填：pid</div>
+			<textarea id="pid" name="pid" rows="1">{{coupon.pid}}</textarea>
+			<div>选填：uid</div>
+			<textarea id="uid" name="uid" rows="1">{{coupon.uid}}</textarea>
+			<div style="padding-top: 10px;">
+				<input type="submit" value="修改" ng-click="modify()" />
+				<div>{{json.id}}</div>
+			</div>
+		</form>
+	</body>
+	<script type="text/javascript" src="../js/global.js" ></script>
+	<script type="text/javascript" src="../js/angular.min.js" ></script>
+	<script type="text/javascript" src="coupon_modify.js"></script>
+</html>

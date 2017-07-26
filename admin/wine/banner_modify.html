@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="admin" ng-controller="banner_modify">
-
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="../css/mui.min.css" />
-		<script type="text/javascript" src="../js/angular.min.js"></script>
-		<script type="text/javascript" src="../js/global.js"></script>
 		<title>上传banner图片</title>
 	</head>
 
@@ -17,10 +14,10 @@
 			<div>跳转标题title</div>
 			<textarea id="title" name="title" rows="1">{{row.title}}</textarea>
 			<div>跳转url</div>
-			<textarea id="url" name="url" rows="1"></textarea>
+			<textarea id="url" name="url" rows="1">{{row.url}}</textarea>
 			<div>选取上传图片</div>
 			<div>
-				<img id="images" width="100px" height="100px" />
+				<img ng-src="{{row.imgurl}}" id="images" width="100px" height="100px" />
 				<input type="file" id="file" name="file" onchange="GetImage(this);" />
 			</div>
 			<div style="padding-top: 10px;">
@@ -36,5 +33,7 @@
 			}
 		</script>
 	</body>
+	<script type="text/javascript" src="../js/global.js" ></script>
+	<script type="text/javascript" src="../js/angular.min.js" ></script>
 	<script type="text/javascript" src="banner_modify.js"></script>
 </html>
