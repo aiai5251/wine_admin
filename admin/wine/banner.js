@@ -5,7 +5,7 @@ app.controller('banner', function($scope, $http) {
 	});
 	
 	$scope.deleteRow = function(row) {
-		$http.get(getHeadUrl() + "banner_delete").success(function(response) {
+		$http.get(getHeadUrl() + "banner_delete?id=" + row.id).success(function(response) {
 			window.location.reload();
 		});
 	}
