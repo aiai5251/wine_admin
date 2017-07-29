@@ -3,6 +3,15 @@ function getHeadUrl() {
 	return "http://main-zha.com/chimu/wine/";
 }
 
+function getTel() {
+	return "135245560007";
+	var sd = localStorage.getItem("tel");
+	if (sd != undefined && sd.length != 0) {
+		return sd;
+	}
+	return "";
+}
+
 // Request
 function GetQueryString(name) {
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");

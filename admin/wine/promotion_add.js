@@ -1,5 +1,5 @@
 var app = angular.module('admin', []);
-app.controller('product_add', function($scope, $http) {
+app.controller('promotion_add', function($scope, $http) {
 	if (getTel().length == 0) {
 		location.href = "login.html";
 		return;
@@ -9,14 +9,14 @@ app.controller('product_add', function($scope, $http) {
 		var formdata = new FormData(document.getElementById("form_add"));
 		$http({
 			method: 'POST',
-			url: getHeadUrl() + "product_add.a",
+			url: getHeadUrl() + "promotion_add",
 			data: formdata,
 			headers: {
 				'Content-Type': undefined
 			},
 			transformRequest: angular.identity
 		}).success(function(response) {
-			$scope.json = response;
+			$scope.json = response.data;
 		});
 	}
 });

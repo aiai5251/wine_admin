@@ -1,5 +1,10 @@
 var app = angular.module('admin', []);
 app.controller('product_modify', function($scope, $http) {
+	if (getTel().length == 0) {
+		location.href = "login.html";
+		return;
+	}
+	
 	$scope.pid = GetQueryString("id");
 	$http.get(getHeadUrl() + "product_detail?id=" + $scope.pid).success(function(response) {
 		$scope.json = response.data;

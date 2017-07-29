@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="promotion_modify">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<title>上传banner图片</title>
+	</head>
+
+	<body>
+		<div style="font-size: 15px; padding: 15px;"></div>
+		<form id="form_modify" method="post" enctype="multipart/form-data" style="padding: 15px;">
+			<div>必填：id</div>
+			<textarea id="id" name="id" rows="1" readonly="readonly">{{row.id}}</textarea>
+			<div>必填：pid， 0 就是所有商品都展示</div>
+			<textarea id="pid" name="pid" rows="1">{{row.pid}}</textarea>
+			<div>必填：简短name</div>
+			<textarea id="name" name="name" rows="1">{{row.name}}</textarea>
+			<div>必填：描述description</div>
+			<textarea id="description" name="description" rows="1">{{row.description}}</textarea>
+			<div style="padding-top: 10px;">
+				<input type="submit" value="添加" ng-click="modify()" />
+				<div>{{json.id}}</div>
+			</div>
+		</form>
+	</body>
+	<script type="text/javascript" src="../js/global.js" ></script>
+	<script type="text/javascript" src="../js/angular.min.js" ></script>
+	<script type="text/javascript" src="promotion_modify.js"></script>
+</html>

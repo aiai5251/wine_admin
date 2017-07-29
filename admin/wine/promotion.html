@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="admin" ng-controller="promotion">
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+		<title>商品列表</title>
+	</head>
+	<body>
+		<a href="promotion_add.html" target="_blank">add</a>
+		<table border="1">
+			<tbody>
+				<tr>
+					<td>op</td>
+					<td>id</td>
+					<td>pid</td>
+					<td>name</td>
+					<td>description</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr ng-repeat="row in json" style="height: 50px;">
+					<td>
+						<a href="promotion_modify.html?id={{row.id}}" target="_blank">modify</a>
+						<!--<input type="submit" value="删除" ng-click="deleteRow(row)" />-->
+					</td>
+					<td>{{row.id}}</td>
+					<td>{{row.pid}}</td>
+					<td>{{row.name}}</td>
+					<td>{{row.description}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</body>
+	<script type="text/javascript" src="../js/global.js" ></script>
+	<script type="text/javascript" src="promotion.js" ></script>
+</html>

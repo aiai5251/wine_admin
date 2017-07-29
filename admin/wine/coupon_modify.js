@@ -1,5 +1,10 @@
 var app = angular.module('admin', []);
 app.controller('coupon_modify', function($scope, $http) {
+	if (getTel().length == 0) {
+		location.href = "login.html";
+		return;
+	}
+	
 	$scope.couponId = GetQueryString("id");
 	
 	$http.get(getHeadUrl() + "coupon?id=" +$scope.couponId).success(function(response) {

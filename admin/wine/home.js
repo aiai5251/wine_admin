@@ -1,10 +1,10 @@
 var app = angular.module("admin", []);
 app.controller("home", function($scope, $http, $sce) {
-	//没有登录
-	//	if (localStorage.getItem('tel') == null) {
-	//		location.href = "login.html";
-	//		return;
-	//	}
+	$scope.tel = getTel();
+	if ($scope.tel.length == 0) {
+		location.href = "login.html";
+		return;
+	}
 
 	$scope.titleList = [{
 		"title": "用户列表",
@@ -37,6 +37,11 @@ app.controller("home", function($scope, $http, $sce) {
 	}, {
 		"title": "优惠券",
 		"src": "coupon.html",
+		"click": 0,
+		"list": []
+	}, {
+		"title": "促销",
+		"src": "promotion.html",
 		"click": 0,
 		"list": []
 	}];

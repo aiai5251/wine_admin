@@ -1,13 +1,13 @@
 var app = angular.module('admin', []);
-app.controller('banner_modify', function($scope, $http) {
+app.controller('promotion_modify', function($scope, $http) {
 	if (getTel().length == 0) {
 		location.href = "login.html";
 		return;
 	}
 	
-	$scope.bannerId = GetQueryString("id");
-	
-	$http.get(getHeadUrl() + "banner_detail?id=" +$scope.bannerId).success(function(response) {
+	$scope.promotionId = GetQueryString("id");
+
+	$http.get(getHeadUrl() + "promotion?id=" +$scope.promotionId).success(function(response) {
 		$scope.row = response.data;
 	});
 	
@@ -15,7 +15,7 @@ app.controller('banner_modify', function($scope, $http) {
 		var formdata = new FormData(document.getElementById("form_modify"));
 		$http({
 			method: 'POST',
-			url: getHeadUrl() + "banner_modify",
+			url: getHeadUrl() + "promotion_modify",
 			data: formdata,
 			headers: {
 				'Content-Type': undefined

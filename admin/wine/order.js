@@ -1,5 +1,10 @@
 var app = angular.module("admin", []);
 app.controller("order", function($scope, $http) {
+	if (getTel().length == 0) {
+		location.href = "login.html";
+		return;
+	}
+	
 	$scope.id = GetQueryString("id");
 	$scope.uid = GetQueryString("uid");
 	$scope.order_num = GetQueryString("order_num");
