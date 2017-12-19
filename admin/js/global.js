@@ -1,6 +1,6 @@
 function getHeadUrl() {
 //	return "http://localhost:9090/wine/";
-	return "http://main-zha.com/chimu/wine/";
+	return "http://api.main-zha.com/wine/";
 }
 
 function getTel() {
